@@ -1,4 +1,4 @@
-package ru.elikhanov.theatre.models;
+package ru.elikhanov.theatre.DTO;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
@@ -9,23 +9,15 @@ import lombok.Setter;
 
 import java.util.List;
 
-@Entity
-@Table(name = "category")
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 
-public class Category {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+public class PlaceCategory {
 
     @Size(min = 3, max = 30, message = "Name should longer than 2 and shorter than 30")
     private String name;
 
-    @OneToMany(mappedBy = "category")
-    private List<Performance> performanceList;
-
-    
 }

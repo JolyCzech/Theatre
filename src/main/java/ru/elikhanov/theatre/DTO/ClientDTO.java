@@ -1,4 +1,4 @@
-package ru.elikhanov.theatre.models;
+package ru.elikhanov.theatre.DTO;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
@@ -10,19 +10,12 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.validator.constraints.Range;
 
-import java.util.List;
 
-@Entity
-@Table(name = "client")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-public class Client {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-
+public class ClientDTO {
 
     @NotEmpty(message = "Name should not be empty")
     @Size(min = 2, message = "Name should longer than 2")
@@ -42,6 +35,5 @@ public class Client {
 
     private String phoneNumber;
 
-    @OneToMany(mappedBy = "client")
-    private List<SeancePlace> tickets;
+
 }
