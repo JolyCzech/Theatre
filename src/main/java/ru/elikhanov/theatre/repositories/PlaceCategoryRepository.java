@@ -1,6 +1,8 @@
 package ru.elikhanov.theatre.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import ru.elikhanov.theatre.models.PlaceCategory;
 
-public interface PlaceCategoryRepository extends JpaRepository<PlaceRepository,Long> {
+public interface PlaceCategoryRepository extends JpaRepository<PlaceCategory, Long> {
+
 }
