@@ -23,4 +23,7 @@ public class PerformanceDTO {
 
     private int age;
 
+    private GenreDTO genreDTO;
+
+    private CategoryDTO category;
 }
