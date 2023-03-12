@@ -11,4 +11,6 @@ import java.util.Optional;
 public interface HallRepository  extends JpaRepository<Hall,Long> {
     List<Hall> findHallsByTheatreId(Long theatreId);
     Optional<Hall> findHallsByTheatreAndNameIgnoreCase(Theatre theatre, String hallName);
+    Optional<Hall> findHallsByNameAndTheatre_Id(Long theatreId, String hallName);
+
 }
