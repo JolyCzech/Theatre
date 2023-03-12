@@ -23,8 +23,10 @@ public class Performance {
     @Size(min = 3, max = 30, message = "Name should longer than 2 and shorter than 100")
     private String title;
 
-    @Size(max = 3000, message = "description should be shorter than 3500")
+    @Size(max = 3000, message = "Description should be shorter than 3500")
     private String description;
+
+    @Size(min = 3, max = 30, message = "Director's name should longer than 2 and shorter than 100")
     private String director;
 
     @ManyToOne

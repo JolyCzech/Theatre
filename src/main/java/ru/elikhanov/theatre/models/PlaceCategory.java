@@ -10,7 +10,7 @@ import lombok.Setter;
 import java.util.List;
 
 @Entity
-@Table(name = "place_Category")
+@Table(name = "place_category")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -21,7 +21,7 @@ public class PlaceCategory {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Size(min = 3, max = 30, message = "Name should longer than 2 and shorter than 30")
+    @Size(min = 3, max = 30, message = "Name should longer than 3 and shorter than 30")
     private String name;
 
     @OneToMany(mappedBy = "placeCategory")

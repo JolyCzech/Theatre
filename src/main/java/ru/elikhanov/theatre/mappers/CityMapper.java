@@ -16,7 +16,7 @@ public class CityMapper {
     private final ModelMapper modelMapper;
 
 
-    public List<CityDTO> createCityDTOList(List<City> cityList) {
+    public List<CityDTO> convertToList(List<City> cityList) {
         return cityList
                 .stream()
                 .map(this::convertToCityDTO)

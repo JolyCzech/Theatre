@@ -45,7 +45,6 @@ public class CategoryController {
             @RequestBody @Valid CategoryDTO categoryDTO
 
     ) {
-
         return new ResponseEntity<>(categoryService.updateCategory(categoryId, categoryDTO), HttpStatus.ACCEPTED);
     }
 

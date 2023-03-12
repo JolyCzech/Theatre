@@ -15,7 +15,7 @@ import ru.elikhanov.theatre.models.Theatre;
 public class HallDTO {
 
     @NotNull
-    @Size(min = 3, max = 30, message = "Name should longer than 2 and shorter than 30")
+    @Size(min = 3, max = 30, message = "Name should longer than 3 and shorter than 30")
 
     private String name;
 

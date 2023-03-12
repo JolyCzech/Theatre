@@ -1,10 +1,13 @@
 package ru.elikhanov.theatre.models;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import ru.elikhanov.theatre.DTO.PlaceCategoryDTO;
 
 import java.util.List;
 
@@ -19,6 +22,8 @@ public class Place {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @NotNull
+    @Pattern(regexp="[\\d]{10}")
     private int number;
 
     @ManyToOne
@@ -32,4 +37,9 @@ public class Place {
     @OneToMany(mappedBy = "place")
     private List<SeancePlace> seancePlaceList;
 
+    public Place(int number, Hall hall, PlaceCategory placeCategory) {
+        this.number = number;
+        this.hall = hall;
+        this.placeCategory = placeCategory;
+    }
 }
