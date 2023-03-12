@@ -8,7 +8,7 @@ public interface HallService {
 
     List<HallDTO> getHallsByTheatre(Long theatreId);
 
-    //    HallDTO getHallById(Long hallId);
+    HallDTO getHallById(Long hallId);
 
     HallDTO createHall(Long theatreId, HallDTO hallDTO);
 

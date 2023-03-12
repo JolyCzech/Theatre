@@ -6,7 +6,9 @@ import java.util.List;
 
 public interface CityService {
 
-    List<CityDTO> getAllCities(Long theatreId);
+    List<CityDTO> getAllCities();
+
+    CityDTO getCityById(Long cityId);
 
     CityDTO createCity(CityDTO cityDTO);
 
