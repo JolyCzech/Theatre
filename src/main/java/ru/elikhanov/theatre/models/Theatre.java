@@ -22,9 +22,14 @@ public class Theatre {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "city_id", referencedColumnName = "id")
     private City city;
+
+    @Size(min = 3, max = 30, message = "Name should longer than 3 and shorter than 30")
+    @NotNull
+    private String name;
+
     @NotNull
     private String address;
     @NotNull
@@ -34,7 +39,7 @@ public class Theatre {
     @Pattern(regexp="[\\d]{10}")
     private String phoneNumber;
 
-    @OneToMany(mappedBy = "theatre")
+    @OneToMany(fetch=FetchType.LAZY, cascade=CascadeType.REMOVE,mappedBy = "theatre")
     private List<Hall> hallList;
 
 }

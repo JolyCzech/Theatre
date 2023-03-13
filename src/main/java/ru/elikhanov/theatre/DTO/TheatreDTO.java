@@ -15,7 +15,11 @@ import lombok.Setter;
 @Setter
 public class TheatreDTO {
     @NotNull
-    private CityDTO city;
+    private String cityName;
+
+    @Size(min = 3, max = 30, message = "Name should longer than 3 and shorter than 30")
+    @NotNull
+    private String name;
     @NotNull
     private String address;
     @NotNull

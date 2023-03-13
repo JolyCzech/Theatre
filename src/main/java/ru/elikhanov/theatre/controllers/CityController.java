@@ -35,9 +35,7 @@ public class CityController {
     @PostMapping()
     public ResponseEntity<CityDTO> createCity(
             @RequestBody @Valid CityDTO cityDTO
-
     ) {
-
         return new ResponseEntity<>(cityService.createCity(cityDTO), HttpStatus.CREATED);
     }
 
@@ -45,9 +43,7 @@ public class CityController {
     public ResponseEntity<CityDTO> updateCity(
             @PathVariable("cityId") Long cityId,
             @RequestBody @Valid CityDTO cityDTO
-
     ) {
-
         return new ResponseEntity<>(cityService.updateCity(cityId, cityDTO), HttpStatus.ACCEPTED);
     }
 

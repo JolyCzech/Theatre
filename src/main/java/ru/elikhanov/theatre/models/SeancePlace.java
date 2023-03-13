@@ -14,17 +14,17 @@ public class SeancePlace {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "place_id",referencedColumnName = "id")
     private Place place;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "seance_id",referencedColumnName = "id")
     private Seance seance;
 
     private boolean reserved;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "client_id",referencedColumnName = "id")
     private Client client;
 }
