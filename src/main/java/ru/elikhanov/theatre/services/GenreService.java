@@ -9,7 +9,7 @@ public interface GenreService {
 
     GenreDTO getGenreById(Long genreId);
 
-    GenreDTO createGenre(GenreDTO genreDTO);
+    Long createGenre(GenreDTO genreDTO);
 
     GenreDTO updateGenre(Long id, GenreDTO genreDTO);
 

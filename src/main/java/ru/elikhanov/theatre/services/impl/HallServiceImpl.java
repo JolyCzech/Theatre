@@ -51,7 +51,7 @@ public class HallServiceImpl implements HallService {
 
     @Override
     @Transactional()
-    public HallDTO createHall(Long theatreId, HallDTO hallDTO) {
+    public Long createHall(Long theatreId, HallDTO hallDTO) {
         Theatre theatre = theatreRepository.findById(theatreId).orElseThrow(() ->
                 new NotFoundException(
                         "Theatre with id" + theatreId + " not found"));
@@ -65,7 +65,7 @@ public class HallServiceImpl implements HallService {
         hall.setTheatre(theatre);
         hallRepository.save(hall);
 
-        return hallDTO;
+        return hall.getId();
     }
 
     @Override

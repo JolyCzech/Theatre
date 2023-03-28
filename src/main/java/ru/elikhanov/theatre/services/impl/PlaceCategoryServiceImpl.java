@@ -33,11 +33,11 @@ public class PlaceCategoryServiceImpl implements PlaceCategoryService {
 
     @Override
     @Transactional
-    public PlaceCategoryDTO createPlaceCategory(PlaceCategoryDTO PlaceCategoryDTO) {
+    public Long createPlaceCategory(PlaceCategoryDTO PlaceCategoryDTO) {
         findPlaceCategoryIsPresentThrow(PlaceCategoryDTO.getName());
         PlaceCategory placeCategory = mapper.convertTo(PlaceCategoryDTO, PlaceCategory.class);
         placeCategoryRepository.save(placeCategory);
-        return PlaceCategoryDTO;
+        return placeCategory.getId();
     }
 
     @Override

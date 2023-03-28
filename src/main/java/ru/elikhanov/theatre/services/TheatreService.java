@@ -9,7 +9,7 @@ public interface TheatreService {
 
     TheatreDTO getTheatreById(Long theatreId);
 
-    TheatreDTO createTheatre(TheatreDTO theatreDTO);
+    Long createTheatre(TheatreDTO theatreDTO);
 
     TheatreDTO updateTheatre(Long id, TheatreDTO theatreDTO);
 

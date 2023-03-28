@@ -33,7 +33,7 @@ public class CityController {
 
 
     @PostMapping()
-    public ResponseEntity<CityDTO> createCity(
+    public ResponseEntity<Long> createCity(
             @RequestBody @Valid CityDTO cityDTO
     ) {
         return new ResponseEntity<>(cityService.createCity(cityDTO), HttpStatus.CREATED);

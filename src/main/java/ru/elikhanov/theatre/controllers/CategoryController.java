@@ -31,11 +31,10 @@ public class CategoryController {
 
 
     @PostMapping()
-    public ResponseEntity<CategoryDTO> createCategory(
+    public ResponseEntity<Long> createCategory(
             @RequestBody @Valid CategoryDTO categoryDTO
 
     ) {
-
         return new ResponseEntity<>(categoryService.createCategory(categoryDTO), HttpStatus.CREATED);
     }
 

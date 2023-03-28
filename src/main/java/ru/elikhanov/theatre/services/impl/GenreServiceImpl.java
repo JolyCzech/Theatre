@@ -34,11 +34,11 @@ public class GenreServiceImpl implements GenreService {
 
     @Override
     @Transactional
-    public GenreDTO createGenre(GenreDTO genreDTO) {
+    public Long createGenre(GenreDTO genreDTO) {
         findGenreIsPresentThrow(genreDTO.getName());
         Genre genre = mapper.convertTo(genreDTO, Genre.class);
         genreRepository.save(genre);
-        return genreDTO;
+        return genre.getId();
     }
 
     @Override

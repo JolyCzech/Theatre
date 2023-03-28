@@ -35,5 +35,4 @@ public class ClientDTO {
 
     private String phoneNumber;
 
-
 }

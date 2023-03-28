@@ -30,7 +30,7 @@ public class TheatreController {
     }
 
     @PostMapping()
-    public ResponseEntity<TheatreDTO> createCity(
+    public ResponseEntity<Long> createCity(
             @RequestBody @Valid TheatreDTO TheatreDTO
 
     ) {

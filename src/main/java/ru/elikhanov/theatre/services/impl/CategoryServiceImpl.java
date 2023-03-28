@@ -35,11 +35,11 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     @Transactional
-    public CategoryDTO createCategory(CategoryDTO categoryDTO) {
+    public Long createCategory(CategoryDTO categoryDTO) {
         findCategoryIsPresentThrow(categoryDTO.getName());
         Category category = mapper.convertTo(categoryDTO, Category.class);
         categoryRepository.save(category);
-        return categoryDTO;
+        return category.getId();
     }
 
     @Override

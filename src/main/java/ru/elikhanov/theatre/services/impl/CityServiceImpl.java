@@ -21,10 +21,12 @@ public class CityServiceImpl implements CityService {
     private final CityRepository cityRepository;
     private final Mapper mapper;
 
+
     @Override
     public List<CityDTO> getAllCities() {
         return mapper.convertToList(cityRepository.findAll(), CityDTO.class);
     }
+
 
     @Override
     public CityDTO getCityById(Long cityId) {
@@ -35,12 +37,14 @@ public class CityServiceImpl implements CityService {
 
     @Override
     @Transactional
-    public CityDTO createCity(CityDTO cityDTO) {
+    public Long createCity(CityDTO cityDTO) {
         findCityIsPresentThrow(cityDTO.getName());
         City city = mapper.convertTo(cityDTO, City.class);
         cityRepository.save(city);
-        return cityDTO;
+        return city.getId();
     }
+
+
 
     @Override
     @Transactional

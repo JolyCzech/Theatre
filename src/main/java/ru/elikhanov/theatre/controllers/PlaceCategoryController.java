@@ -31,7 +31,7 @@ public class PlaceCategoryController {
 
 
     @PostMapping()
-    public ResponseEntity<PlaceCategoryDTO> createPlaceCategory(
+    public ResponseEntity<Long> createPlaceCategory(
             @RequestBody @Valid PlaceCategoryDTO PlaceCategoryDTO
 
     ) {

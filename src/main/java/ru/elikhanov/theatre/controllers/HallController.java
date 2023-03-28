@@ -33,7 +33,7 @@ public class HallController {
     }
 
     @PostMapping("/{theatreId}/halls")
-    public ResponseEntity<HallDTO> addHallInTheTheatre(
+    public ResponseEntity<Long> addHallInTheTheatre(
             @PathVariable("theatreId") Long theatreId,
             @RequestBody @Valid HallDTO hallDTO
 

@@ -11,6 +11,7 @@ import lombok.Setter;
 import org.hibernate.validator.constraints.Range;
 
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 @Table(name = "client")
@@ -44,4 +45,6 @@ public class Client {
 
     @OneToMany(mappedBy = "client")
     private List<SeancePlace> tickets;
+
+
 }

@@ -26,4 +26,5 @@ public class City {
     @OneToMany(mappedBy = "city")
     private List<Theatre> theatreList;
 
+
 }

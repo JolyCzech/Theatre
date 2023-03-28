@@ -10,7 +10,7 @@ public interface HallService {
 
     HallDTO getHallById(Long hallId);
 
-    HallDTO createHall(Long theatreId, HallDTO hallDTO);
+    Long createHall(Long theatreId, HallDTO hallDTO);
 
     HallDTO updateHall(Long id, HallDTO hallDTO);
 

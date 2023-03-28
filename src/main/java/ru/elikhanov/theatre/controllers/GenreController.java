@@ -30,7 +30,7 @@ public class GenreController {
 
 
     @PostMapping()
-    public ResponseEntity<GenreDTO> createGenre(
+    public ResponseEntity<Long> createGenre(
             @RequestBody @Valid GenreDTO genreDTO
 
     ) {

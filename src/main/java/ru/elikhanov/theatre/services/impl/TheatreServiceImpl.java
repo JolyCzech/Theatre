@@ -38,7 +38,7 @@ public class TheatreServiceImpl implements TheatreService {
 
     @Override
     @Transactional
-    public TheatreDTO createTheatre(TheatreDTO theatreDTO) {
+    public Long createTheatre(TheatreDTO theatreDTO) {
 
         findTheatreIsPresentThrow(theatreDTO.getName());
         City city = cityRepository.findByName((theatreDTO.getCityName())).orElseThrow(() ->
@@ -48,7 +48,7 @@ public class TheatreServiceImpl implements TheatreService {
         Theatre theatre = mapper.convertTo(theatreDTO, Theatre.class);
         theatre.setCity(city);
         theatreRepository.save(theatre);
-        return theatreDTO;
+        return theatre.getId();
     }
 
     @Override
@@ -59,7 +59,6 @@ public class TheatreServiceImpl implements TheatreService {
                 new NotFoundException(
                         "City with name " + theatreDTO.getCityName() + " not found"));
         Theatre updatedTheatre = findTheatreById(id);
-        findTheatreIsPresentThrow(theatreDTO.getName());
         updatedTheatre = mapper.convertTo(theatreDTO, Theatre.class);
         updatedTheatre.setCity(city);
         updatedTheatre.setId(id);
